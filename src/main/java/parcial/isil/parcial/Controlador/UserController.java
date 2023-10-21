@@ -15,10 +15,13 @@ import java.util.List;
 public class UserController {
 @Autowired
     private UserRepository userRepository;
-    @GetMapping("/")
-    public String UserIndex(Model model) {
-        List<User> user = userRepository.findAll();
-        model.addAttribute("user", user);
-        return "index";
+
+@GetMapping("/")
+    public  String UserIngreso(){
+    return "Ingreso";
+}
+    @GetMapping("/registro")
+    public String UserIndex() {
+      return "registro";
     }
 }
