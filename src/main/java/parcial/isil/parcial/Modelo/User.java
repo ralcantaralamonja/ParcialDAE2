@@ -6,6 +6,7 @@ import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Data
 @Entity
@@ -29,5 +30,6 @@ public class User {
     private String correo_electronico;
     @NotBlank
     @NotNull
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&+=!*])(?=\\S+$).{6,}$")
     private String contrasena;
 }
